@@ -1,6 +1,7 @@
 #ifndef SHELL_H
 #define SHELL_H
 
+/* libraries */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -9,7 +10,6 @@
 #include <stddef.h>
 #include <sys/stat.h>
 #include <signal.h>
-
 /**
  * The global variable environment
  */
