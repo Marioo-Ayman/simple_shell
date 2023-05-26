@@ -12,9 +12,7 @@
 #include <sys/stat.h>
 #include <signal.h>
 
-/**
- * The global variable environment
- */
+/*The global variable environment*/
 extern char **environ;
 
 /**
@@ -39,9 +37,7 @@ typedef struct mybuild
 	void (*func)(char **);
 } mybuild;
 
-/**
- * Functions
- */
+/*Functions*/
 void sig_handler(int sig_num);
 void _puts(char *str);
 int _putchar(char c);
