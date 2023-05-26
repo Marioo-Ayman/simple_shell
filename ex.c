@@ -2,9 +2,7 @@
 
 /**
  * execution - function that executes the commands
- *@cp: cmd
- *@cmd: array of pointer to cmds
- * Return: 0
+ *
  */
 void execution(char *cp, char **cmd)
 {
@@ -25,4 +23,14 @@ void execution(char *cp, char **cmd)
 	}
 	else
 		wait(&status);
+}
+/**
+* exit_cmd - to exit shell
+* Return: nothing
+*/
+void exit_cmd(char **command, char *line)
+{
+        free(line);
+        free_buffers(command);
+        exit(0);
 }
