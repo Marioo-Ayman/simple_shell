@@ -32,7 +32,7 @@ ssize_t _getline(char **line, size_t *n)
 		if (i + 1 >= bufsize)
 		{
 			bufsize += 1024;
-			buffer = _realloc(buffer, bufsize);
+			buffer = _realloc(buffer, bufsize-1024, bufsize);
 			if (buffer == NULL)
 			{
 				return (-1);

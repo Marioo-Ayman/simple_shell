@@ -79,4 +79,9 @@ struct flags
 	bool interactive;
 } flags;
 
+/* toem_realloc.c */
+char *_memset(char *, char, unsigned int);
+void ffree(char **);
+void *_realloc(void *, unsigned int, unsigned int);
+
 #endif /* SHELL_H */
