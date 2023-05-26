@@ -2,7 +2,9 @@
 
 /**
  * execution - function that executes the commands
- *
+ * @cp: copy of the command
+ * @cmd: the command from the user
+ * Return: nothing
  */
 void execution(char *cp, char **cmd)
 {
@@ -24,13 +26,16 @@ void execution(char *cp, char **cmd)
 	else
 		wait(&status);
 }
+
 /**
 * exit_cmd - to exit shell
+* @command: command from the user
+* @line: from getline
 * Return: nothing
 */
 void exit_cmd(char **command, char *line)
 {
-        free(line);
-        free_buffers(command);
-        exit(0);
+	free(line);
+	free_buffers(command);
+	exit(0);
 }
