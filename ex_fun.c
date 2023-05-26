@@ -13,7 +13,7 @@ char **splitstring(char *str, const char *delim)
 	char *token = NULL;
 	char *copy = NULL;
 
-	copy = my_calloc((_strlen(str) + 1), 1);
+	copy = malloc(_strlen(str) + 1);
 	if (!copy)
 	{
 		perror(getenv("_"));
@@ -27,11 +27,11 @@ char **splitstring(char *str, const char *delim)
 	copy[i] = '\0';
 
 	token = strtok(copy, delim);
-	array = my_calloc((sizeof(char *)), 1);
+	array = malloc((sizeof(char *) * 2));
 	array[0] = _strdup(token);
 
 	i = 1;
-	wn = 2;
+	wn = 3;
 	while ((token = strtok(NULL, delim)) != NULL)
 	{
 		array = my_realloc(array,
