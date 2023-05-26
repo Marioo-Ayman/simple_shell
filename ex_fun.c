@@ -75,24 +75,43 @@ void *my_calloc(unsigned int nitems, unsigned int size)
  */
 void *my_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *p;
+	char *new = NULL;
+	char *old = NULL;
+
+	unsigned int i;
 
 	if (!ptr)
-		return (malloc(new_size));
-	if (!new_size)
-		return (free(ptr), NULL);
+		return (my_calloc(new_size, 1));
+
 	if (new_size == old_size)
 		return (ptr);
 
-	p = malloc(new_size);
-	if (!p)
+	if (new_size == 0 && ptr)
+	{
+		free(ptr);
+		return (NULL);
+	}
+
+	new = my_calloc(new_size, 1);
+	old = ptr;
+	if (!new)
 		return (NULL);
 
-	old_size = old_size < new_size ? old_size : new_size;
-	while (old_size--)
-		p[old_size] = ((char *)ptr)[old_size];
-	free(ptr);
-	return (p);
+	if (new_size > old_size)
+	{
+		for (i = 0; i < old_size; i++)
+			new[i] = old[i];
+		free(ptr);
+		for (i = old_size; i < new_size; i++)
+			new[i] = '\0';
+	}
+	if (new_size < old_size)
+	{
+		for (i = 0; i < new_size; i++)
+			new[i] = old[i];
+		free(ptr);
+	}
+	return (new);
 }
 
 /**
@@ -126,20 +145,9 @@ void execute(char **arv)
  */
 void freearv(char **arv)
 {
-	char **a = arv;
+	int i = 0;
 
-	if (!arv)
-		return;
-	while (*arv)
-		free(*arv++);
-	free(a);
-
-<<<<<<< HEAD
-=======
-	for (i = 0; arv[i]== NULL; i++){
+	for (i = 0; arv[i] == NULL; i++)
 		free(arv[i]);
 	free(arv);
-	}
-	
->>>>>>> e60771c28168138b54c2ff27873e0b6f3ff0ea32
 }
