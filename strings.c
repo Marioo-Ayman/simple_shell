@@ -2,6 +2,8 @@
 
 /**
 * _strcmp - compares two strings
+* @s1: is a string pointer
+* @s2: pointer to string
 * Return: difference between strings
 */
 int _strcmp(char *s1, char *s2)
@@ -18,6 +20,7 @@ int _strcmp(char *s1, char *s2)
 
 /**
 * _strlen - returns the length of a string
+* @s: is the string to be calculated
 * Return:length of string 
 */
 int _strlen(char *s)
@@ -34,6 +37,9 @@ int _strlen(char *s)
 
 /**
 * _strncmp - compares two strings up to n bytes
+* @s1: pointer to string
+* @s2: pointer to string
+* @n: is an integer
 * Return: difference between s1 and s2
 */
 int _strncmp(char *s1, char *s2, int n)
@@ -50,6 +56,7 @@ int _strncmp(char *s1, char *s2, int n)
 
 /**
 * _strdup - dupicates string
+* @s: pointer to string
 * Return: pointer to duplicate string
 */
 char *_strdup(char *s)
@@ -74,6 +81,8 @@ char *_strdup(char *s)
 
 /**
 * _strchr - locates a character in a string
+* @s: string to be located in
+* @c: character to be allocated
 * Return: returns pointer
 */
 char *_strchr(char *s, char c)
