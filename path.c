@@ -35,35 +35,34 @@ char *append_path(char *path, char *command)
 {
         char *buf;
         size_t i = 0, j = 0;
-
-        if (command == 0)
-                command = "";
+	
+	if (command == 0)
+		command = "";
 
         if (path == 0)
-                path = "";
-
-        buf = malloc(sizeof(char) * (_strlen(path) + _strlen(command) + 2));
-        if (!buf)
-                return (NULL);
-
-        while (path[i])
-        {
-                buf[i] = path[i];
-                i++;
-        }
-
-        if (path[i - 1] != '/')
-        {
-                buf[i] = '/';
-                i++;
-        }
-        while (command[j])
-        {
-                buf[i + j] = command[j];
-                j++;
-        }
-        buf[i + j] = '\0';
-        return (buf);
+		path = "";
+	
+	buf = malloc(sizeof(char) * (_strlen(path) + _strlen(command) + 2));
+	if (!buf)
+		return (NULL);
+	while (path[i])
+       	{
+		buf[i] = path[i];
+		i++;
+	}
+	
+	if (path[i - 1] != '/')
+	{
+		buf[i] = '/';
+			i++;
+	}
+	while (command[j])
+	{
+		buf[i + j] = command[j];
+		j++;
+	}
+	buf[i + j] = '\0';
+	return (buf);
 }
 
 /**
@@ -73,16 +72,16 @@ char *append_path(char *path, char *command)
 */
 char *test_path(char **path, char *command)
 {
-        int i = 0;
-        char *output;
+	int i = 0;
+	char *output;
 
-        while (path[i])
-        {
-                output = append_path(path[i], command);
+	while (path[i])
+	{
+		output = append_path(path[i], command);
                 if (access(output, F_OK | X_OK) == 0)
-                        return (output);
-                free(output);
-                i++;
-        }
-        return (NULL);
+			return (output);
+		free(output);
+                i;
+	}
+	return (NULL);
 }
