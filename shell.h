@@ -12,7 +12,9 @@
 #include <sys/stat.h>
 #include <signal.h>
 
-/*The global variable environment*/
+/**
+ * @environ: The global variable environment
+ */
 extern char **environ;
 
 /**
