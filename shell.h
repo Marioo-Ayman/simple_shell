@@ -13,9 +13,7 @@
 #include <signal.h>
 #include <stdint.h>
 
-/**
- * The global variable environment
- */
+/* The global variable environment*/
 extern char **environ;
 
 /**
