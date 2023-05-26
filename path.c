@@ -40,7 +40,7 @@ char *append_path(char *path, char *command)
 
 	if (command == 0)
 		command = "";
-	
+
 	if (path == 0)
 		path = "";
 
