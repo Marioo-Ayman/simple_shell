@@ -53,17 +53,18 @@ char **splitstring(char *str, const char *delim)
  */
 void *my_calloc(unsigned int nitems, unsigned int size)
 {
-    void *block = NULL;
-    uintmax_t total_size = (uintmax_t)nitems * (uintmax_t)size;
+	void *block = NULL;
+	uintmax_t total_size = (uintmax_t)nitems * (uintmax_t)size;
 
-    if (nitems == 0 || size == 0 || total_size > SIZE_MAX)
-        return NULL;
+	if (nitems == 0 || size == 0 || total_size > SIZE_MAX)
+		return (NULL);
 
-    block = malloc(total_size);
-    if (block != NULL) {
-        memset(block, 0, total_size);
-    }
-    return block;
+	block = malloc(total_size);
+	if (block != NULL)
+	{
+		memset(block, 0, total_size);
+	}
+	return (block);
 }
 /**
  * my_realloc - it is a function to reallocates memory block
