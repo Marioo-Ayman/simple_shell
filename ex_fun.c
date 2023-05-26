@@ -147,7 +147,9 @@ void freearv(char **arv)
 {
 	int i = 0;
 
-	for (i = 0; arv[i]; i++)
+	for (i = 0; arv[i]== NULL; i++){
 		free(arv[i]);
 	free(arv);
+	}
+	
 }
