@@ -1,21 +1,53 @@
 #include "shell.h"
 
 /**
-* free_buffers - frees buffers
-* @buf: buffer to be freed
+* _putchar - writes the character c to stdout
+* @c: The character to print
 *
-* Return: no return
+* Return: On success 1.
+* On error, -1 is returned and errno set appropriately
 */
-void free_buffers(char **buf)
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+/**
+* print_s - prints a string
+* @s: string to be printed
+*
+* Return: number of printed characters
+*/
+int print_s(char *s)
 {
 	int i = 0;
 
-	if (!buf || buf == NULL)
-		return;
-	while (buf[i])
+	while (s[i] != '\0')
 	{
-		free(buf[i]);
+		_putchar(s[i]);
 		i++;
 	}
-	free(buf);
+
+	return (i);
 }
+
+/**
+* free_buffers - free the pointer of buffer
+* @buf: buffer
+*
+* Return: nothing
+*/
+void free_buffers(char **buf)
+{
+        int i = 0;
+
+        if (!buf || buf == NULL)
+                return;
+        while (buf[i])
+        {
+                free(buf[i]);
+                i++;
+        }
+        free(buf);
+}
+

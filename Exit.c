@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
-* exit_cmd - handles the exit command
-* @command: tokenized command
-* @line: input read from stdin
+* exit_cmd - to exit shell
+* @command: cmd
+* @line: i/p of stdin
 *
-* Return: no return
+* Return: nothing
 */
 void exit_cmd(char **command, char *line)
 {
