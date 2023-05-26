@@ -11,6 +11,7 @@
 #include <stddef.h>
 #include <sys/stat.h>
 #include <signal.h>
+#include <stdint.h>
 
 /**
  * The global variable environment
