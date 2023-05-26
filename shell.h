@@ -45,6 +45,9 @@ char *find_path(void);
 /* helper function for efficient free */
 void free_buffers(char **buf);
 
+/* my own getline */
+ssize_t _getline(char **line, size_t *n);
+
 /**
  * struct builtin - contain the builtins
  * @env: the environments variable
