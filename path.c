@@ -28,29 +28,31 @@ char *find_path(void)
 
 /**
 * append_path - adds path to command
+* @path: path of command
+* @command: user entered command
 * Return: buffer containing command with path on success
 * NULL on failure
 */
 char *append_path(char *path, char *command)
 {
-        char *buf;
-        size_t i = 0, j = 0;
-	
+	char *buf;
+	size_t i = 0, j = 0;
+
 	if (command == 0)
 		command = "";
-
-        if (path == 0)
-		path = "";
 	
+	if (path == 0)
+		path = "";
+
 	buf = malloc(sizeof(char) * (_strlen(path) + _strlen(command) + 2));
 	if (!buf)
 		return (NULL);
 	while (path[i])
-       	{
+	{
 		buf[i] = path[i];
 		i++;
 	}
-	
+
 	if (path[i - 1] != '/')
 	{
 		buf[i] = '/';
@@ -67,6 +69,8 @@ char *append_path(char *path, char *command)
 
 /**
 * test_path - checks path is valid or not
+* @path: tokenized path
+* @command: user entered command
 * Return: path appended with command on success
 * NULL on failure
 */
@@ -78,10 +82,10 @@ char *test_path(char **path, char *command)
 	while (path[i])
 	{
 		output = append_path(path[i], command);
-                if (access(output, F_OK | X_OK) == 0)
+		if (access(output, F_OK | X_OK) == 0)
 			return (output);
 		free(output);
-                i;
+		i++;
 	}
 	return (NULL);
 }
