@@ -2,6 +2,7 @@
 
 /**
 * tokenizer - creates tokens from given input
+* @line: line from the user
 * Return: array of strings
 */
 char **tokenizer(char *line)
