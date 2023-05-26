@@ -2,10 +2,9 @@
 
 /**
  * _getline - function that takes a string from the user as input
- *@line - string
- *@n - number of chars
- *@stream
- *return : number of chars
+ * @line: string
+ * @n: number of chars
+ * Return: number of chars
  */
 ssize_t _getline(char **line, size_t *n)
 {
