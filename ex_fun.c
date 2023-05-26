@@ -134,4 +134,12 @@ void freearv(char **arv)
 		free(*arv++);
 	free(a);
 
+<<<<<<< HEAD
+=======
+	for (i = 0; arv[i]== NULL; i++){
+		free(arv[i]);
+	free(arv);
+	}
+	
+>>>>>>> e60771c28168138b54c2ff27873e0b6f3ff0ea32
 }
